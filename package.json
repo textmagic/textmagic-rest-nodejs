@@ -1,0 +1,36 @@
+{
+    "name": "textmagic-rest-client",
+    "version": "0.0.5",
+    "description": "A Textmagic REST client",
+    "author": "Mikhail Kuzin <mikhail@textmagic.biz>",
+    "contributors": [{
+        "name": "Mikhail Kuzin",
+        "email": "mikhail@textmagic.biz"
+    }],
+
+    "scripts": {
+        "test": "mocha",
+        "lists": "node examples/run.js lists <USERNAME> <API_KEY>"
+    },
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/textmagic/textmagic-rest-nodejs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/textmagic/textmagic-rest-nodejs/issues"
+    },
+    "engines": [
+        "node >= 0.10.0"
+    ],
+    "keywords": [ "textmagic", "sms", "texting", "messages", "mobile", "rest"  ],
+    "dependencies": {
+        "lodash": "^3.8.0"
+    },
+    "devDependencies": {
+        "nock": "^2.2.0",
+        "mocha": "^2.2.5"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/textmagic/textmagic-rest-nodejs#readme"
+}
