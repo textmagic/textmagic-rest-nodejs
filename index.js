@@ -39,6 +39,22 @@ TMRestClient.prototype.host = function () {
     return 'https://' +  this.options.host ;
 };
 
+TMRestClient.prototype.fetch = function(object, method, data, callback) {
+    if(typeof object === 'undefined') {
+        throw ('Wrong method callable.');
+    }
+    
+    var index = method.indexOf('.');
+    if(index > -1) {
+        this.fetch(object[method.substring(0, index)], method.substr(index + 1), data, callback);
+        return;
+    }
+    object[method](data, callback);
+}
 
 module.exports = TMRestClient;
-
+module.exports.execute = function(userName, apiKey, method, data, callback) {
+    var client = new TMRestClient(userName, apiKey);
+    client.fetch(client, method, data, callback);
+    delete client;
+};
