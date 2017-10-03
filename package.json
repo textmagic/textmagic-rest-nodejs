@@ -1,6 +1,6 @@
 {
     "name": "textmagic-rest-client",
-    "version": "0.0.5",
+    "version": "1.0.7",
     "description": "A Textmagic REST client",
     "author": "Mikhail Kuzin <mikhail@textmagic.biz>",
     "contributors": [{
