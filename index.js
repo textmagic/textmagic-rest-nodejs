@@ -7,8 +7,9 @@ function TMRestClient(userName, apiKey, options) {
     var defaults = {
         host: 'rest.textmagic.com',
         version: 'v2',
-        agent: 'textmagic-rest-nodejs/0.01',
-        language: 'en;q=1'
+        agent: 'textmagic-rest-nodejs/0.02',
+        language: 'en;q=1',
+        webpack:false
     };
 
     if (!userName || !apiKey) {
@@ -31,7 +32,12 @@ function TMRestClient(userName, apiKey, options) {
     };
 
     var http = new HttpClient(httpOptions);
-    var a = new Controller(http, require('./resources/index.js'), this);
+    if (this.options.webpack) {
+        var a = new Controller(http, require('./resources/webpack.js'), this, true);
+    } else {
+        var a = new Controller(http, require('./resources/index.js'), this, false);
+    }
+
 
 }
 

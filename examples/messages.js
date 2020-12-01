@@ -4,7 +4,7 @@ module.exports = function(c) {
         console.log('******************************************');
         console.log('Messages.send()', err, res);
         if (err) { return; }
-        var sid = res.id;
+        var sid = res.sessionId;
 
         c.Messages.Sessions.messages(sid, function(err, res){
             console.log('******************************************');

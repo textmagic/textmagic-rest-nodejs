@@ -2,7 +2,7 @@ var assert = require("assert")
 var nock = require('nock');
 var TMClient = require('../index');
 
-var c = new TMClient('user', '123');
+var c = new TMClient('user', '123', {webpack:false});
 
 describe('Contacts', function(){
     describe('... ', function(){
